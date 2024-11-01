@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/a_propos.css' %}">
+{% endblock %}
+
+{% block title %}À propos{% endblock %}
+
+{% block content %}
+<section class="a-propos-section">
+    <div class="container">
+        <!-- Titre principal avec icône -->
+        <h1><i class="fas fa-user-circle"></i> À propos de Moi</h1>
+        <p>Bonjour, je suis KOUAMÉ CHRYS DAVID BROU, passionné par le développement informatique et spécialisé en génie
+            logiciel. Avec une solide expérience dans divers projets technologiques et une formation approfondie en
+            programmation, je me consacre à la création de solutions innovantes qui répondent aux besoins de la
+            communauté. Mon objectif est de mettre mes compétences au service des passionnés de bricolage en créant un
+            espace en ligne où ils peuvent partager leurs idées, leurs conseils et leurs projets.</p>
+
+        <!-- Section Projet avec icône et image -->
+        <h2><i class="fas fa-hammer"></i> Le Projet Forum Bricoleur</h2>
+        <p>Le Forum des Bricoleurs est une plateforme dédiée aux amateurs de bricolage, qu'ils soient débutants ou
+            expérimentés. Ce forum est conçu pour permettre aux utilisateurs de partager leurs connaissances, de poser
+            des questions, et d'échanger sur leurs réalisations personnelles. Que vous soyez passionné par le jardinage,
+            la rénovation, le travail du bois, ou encore l'artisanat, ce forum est fait pour vous !</p>
+        <img src="{% static 'img/forum_bricoleur_image.jpg' %}" alt="Image du projet Forum Bricoleur"
+            class="project-img">
+
+        <!-- Fonctionnalités principales avec icônes -->
+        <h2><i class="fas fa-cogs"></i> Fonctionnalités Principales</h2>
+        <ul class="features-list">
+            <li><i class="fas fa-comments"></i> <strong>Discussions</strong> : Un espace pour lancer des discussions,
+                poser des questions et obtenir des conseils.</li>
+            <li><i class="fas fa-project-diagram"></i> <strong>Projets</strong> : Partagez vos projets terminés ou en
+                cours, avec des photos et des descriptions détaillées.</li>
+            <li><i class="fas fa-layer-group"></i> <strong>Catégories</strong> : Des catégories variées pour chaque
+                domaine du bricolage, de la rénovation à l’artisanat.</li>
+            <li><i class="fas fa-user"></i> <strong>Comptes d'utilisateur</strong> : Créez un profil, suivez d'autres
+                bricoleurs, et participez activement aux discussions.</li>
+            <li><i class="fas fa-people-arrows"></i> <strong>Communauté</strong> : Un espace convivial où l'entraide et
+                le partage sont les maîtres-mots.</li>
+        </ul>
+
+        <!-- Vision avec icône -->
+        <h2><i class="fas fa-eye"></i> Notre Vision</h2>
+        <p>Le bricolage est bien plus qu'un simple passe-temps. C'est une passion qui réunit les gens et qui leur permet
+            d'exprimer leur créativité. À travers le Forum des Bricoleurs, je souhaite créer une communauté engagée, où
+            chacun peut apprendre et s’inspirer des expériences des autres. Mon ambition est de faire de cette
+            plateforme la référence pour les amateurs de bricolage en Côte d'Ivoire et ailleurs.</p>
+
+        <!-- Invitation à rejoindre le forum avec icône -->
+        <h2><i class="fas fa-users"></i> Rejoignez-nous !</h2>
+        <p>Nous vous invitons à rejoindre le Forum des Bricoleurs, à partager vos astuces, et à inspirer d'autres
+            passionnés. Ensemble, bâtissons une communauté forte et accueillante pour tous ceux qui aiment créer de
+            leurs propres mains.</p>
+    </div>
+</section>
+
+{% endblock %}

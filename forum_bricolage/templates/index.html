@@ -1,9 +1,168 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
 {% block title %}Acceuil{% endblock %}
 
 {% block content %}
+<!-- Section de Bienvenue -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Bienvenue sur le Forum des Bricoleurs</h1>
+        <p>Explorez, apprenez et partagez vos astuces de bricolage avec la communauté.</p>
+        <a href="{% url 'a_propos' %}" class="btn-primary">En savoir plus</a>
+    </div>
+</section>
 
-<h1>Hello world</h1>
+<!-- Section Carrousel -->
+<section class="carousel-section">
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slides">
+                <div class="slide">
+                    <img src="{% static 'img/slide1.jpg' %}" alt="Bricolage 1">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'img/slide2.jpg' %}" alt="Bricolage 2">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'img/slide3.jpg' %}" alt="Bricolage 3">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'img/slide4.jpg' %}" alt="Bricolage 4">
+                </div>
+                <div class="slide">
+                    <img src="{% static 'img/slide5.jpg' %}" alt="Bricolage 5">
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+            <button class="prev-btn">&laquo;</button>
+            <button class="next-btn">&raquo;</button>
+        </div>
+    </div>
+</section>
+
+<!-- Section "Pourquoi Nous Choisir ?" -->
+<section class="why-choose-us">
+    <h2>Pourquoi Nous Choisir ?</h2>
+    <div class="features">
+        <div class="feature-item">
+            <i class="fas fa-tools"></i>
+            <h3>Ressources Variées</h3>
+            <p>Des centaines d'articles et tutoriels pour vous aider à réaliser tous vos projets de bricolage.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-comments"></i>
+            <h3>Communauté Active</h3>
+            <p>Discutez et échangez avec d'autres passionnés de bricolage, partagez vos astuces et conseils.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-user-shield"></i>
+            <h3>Sécurité et Confiance</h3>
+            <p>Profitez d'un environnement sécurisé où tous les utilisateurs sont vérifiés et bienveillants.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section "Nos Services" -->
+<section class="services">
+    <h2>Nos Services</h2>
+    <div class="services-content">
+        <div class="service-item">
+            <img src="{% static 'img/service1.jpg' %}" alt="Service 1">
+            <h3>Conseils et Tutoriels</h3>
+            <p>Des guides pas à pas pour mener à bien vos projets, quel que soit votre niveau.</p>
+        </div>
+        <div class="service-item">
+            <img src="{% static 'img/service2.jpg' %}" alt="Service 2">
+            <h3>Projets de la Communauté</h3>
+            <p>Inspirez-vous des projets réalisés par d'autres utilisateurs et lancez-vous dans de nouveaux défis.</p>
+        </div>
+        <div class="service-item">
+            <img src="{% static 'img/service3.jpg' %}" alt="Service 3">
+            <h3>Foire aux Questions</h3>
+            <p>Posez vos questions, obtenez des réponses et des conseils pratiques en temps réel.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section "Témoignages" -->
+<section class="testimonials">
+    <h2>Témoignages de la Communauté</h2>
+    <div class="testimonial-container">
+        <div class="testimonial-item">
+            <p>"Un site incroyable pour apprendre et partager mes astuces de bricolage ! La communauté est chaleureuse
+                et très aidante."</p>
+            <h4>- Marie Dubois</h4>
+        </div>
+        <div class="testimonial-item">
+            <p>"Grâce à ce forum, j'ai pu réaliser mes premiers projets de bricolage. Les conseils sont vraiment utiles
+                et accessibles."</p>
+            <h4>- Jean Martin</h4>
+        </div>
+        <div class="testimonial-item">
+            <p>"Le site parfait pour tous les passionnés de bricolage, des débutants aux plus expérimentés !"</p>
+            <h4>- Sophie Durant</h4>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    let currentIndex = 0;
+
+    // Fonction pour mettre à jour l'élément actif
+    function updateTestimonials() {
+        testimonialItems.forEach((item, index) => {
+            if (index === currentIndex) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    // Changer l'élément actif toutes les 3 secondes
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % testimonialItems.length; // Passer à l'index suivant
+        updateTestimonials();
+    }, 3000); // Durée de changement
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const carousel = document.querySelector('.carousel-slides');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+        });
+    });
+</script>
+
+
+
 
 {% endblock %}

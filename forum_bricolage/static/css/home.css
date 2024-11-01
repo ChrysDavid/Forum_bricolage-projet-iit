@@ -1,0 +1,158 @@
+/* Style pour la section Pourquoi Nous Choisir */
+.why-choose-us {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+.why-choose-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+.feature-item {
+    max-width: 300px;
+    text-align: center;
+}
+.feature-item i {
+    font-size: 3rem;
+    color: #FF5722;
+    margin-bottom: 0.5rem;
+}
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+}
+
+/* Carousel Styling */
+.carousel-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Style pour la section Nos Services */
+.services {
+    padding: 3rem 2rem;
+}
+.services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.services-content {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+}
+.service-item {
+    max-width: 300px;
+    text-align: center;
+}
+.service-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.service-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Style pour la section Témoignages */
+.testimonials {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f1f1f1;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Conteneur des témoignages */
+.testimonial-container {
+    display: flex;
+    justify-content: center; /* Centrer les témoignages */
+    align-items: center; /* Aligner verticalement */
+    overflow: hidden; /* Cacher tout débordement */
+    transition: transform 0.5s ease; /* Animation de transformation */
+}
+
+/* Style des éléments de témoignages */
+.testimonial-item {
+    min-width: 300px; /* Largeur minimale des témoignages */
+    margin: 0 1rem; /* Espace entre les témoignages */
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animation pour le zoom et le flou */
+}
+
+/* Styles spécifiques pour l'élément au centre */
+.testimonial-item.active {
+    transform: scale(1.1); /* Agrandir l'élément actif */
+    filter: blur(0); /* Pas de flou sur l'élément actif */
+}
+
+.testimonial-item:not(.active) {
+    transform: scale(0.9); /* Réduire les éléments non actifs */
+    filter: blur(2px); /* Appliquer un flou aux éléments non actifs */
+}

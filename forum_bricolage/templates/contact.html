@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<!-- Section Image en-tête -->
+<section class="contact-header">
+    <img src="{% static 'img/contact-banner.jpg' %}" alt="Image de contact" class="contact-banner">
+    <h1>Contactez-nous</h1>
+    <p>Nous serons ravis de répondre à vos questions et de vous aider.</p>
+</section>
+
+<!-- Section Informations de Contact -->
+<section class="contact-info">
+    <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Notre Adresse</h3>
+        <p>123 Rue des Bricoleurs, Abidjan, Côte d'Ivoire</p>
+    </div>
+    <div class="info-item">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Téléphone</h3>
+        <p>+225 01 23 45 67</p>
+    </div>
+    <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>contact@forumbricolage.ci</p>
+    </div>
+</section>
+
+<!-- Section Carte et Formulaire de Contact côte à côte -->
+<section class="contact-main">
+    <!-- Section Carte -->
+    <div class="contact-map">
+        <h2>Nous trouver</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12692.995512329516!2d-3.998055319519388!3d5.348399942511756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0!2z5rGzjZvkvobji47kudOJidKFz5jioIE!5e0!3m2!1sen!2sci!4v1234567890" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <!-- Section Formulaire de Contact -->
+    <div class="contact-form">
+        <h2>Envoyez-nous un message</h2>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Sujet</label>
+                <input type="text" id="subject" name="subject">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
