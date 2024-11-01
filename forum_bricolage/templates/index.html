@@ -8,18 +8,17 @@
 {% block title %}Acceuil{% endblock %}
 
 {% block content %}
-<!-- Section de Bienvenue -->
-<section class="hero-section">
-    <div class="hero-content">
-        <h1>Bienvenue sur le Forum des Bricoleurs</h1>
-        <p>Explorez, apprenez et partagez vos astuces de bricolage avec la communauté.</p>
-        <a href="{% url 'a_propos' %}" class="btn-primary">En savoir plus</a>
-    </div>
-</section>
 
 <!-- Section Carrousel -->
-<section class="carousel-section">
+<!-- <section class="carousel-section">
     <div class="carousel-container">
+        <div class="carousel-overlay">
+            <div class="carousel-text">
+                <h1>Bienvenue sur le Forum des Bricoleurs</h1>
+                <p>Explorez, apprenez et partagez vos astuces de bricolage avec la communauté.</p>
+                <a href="{% url 'a_propos' %}" class="btn-carousel">En savoir plus</a>
+            </div>
+        </div>
         <div class="carousel">
             <div class="carousel-slides">
                 <div class="slide">
@@ -45,7 +44,8 @@
             <button class="next-btn">&raquo;</button>
         </div>
     </div>
-</section>
+</section> -->
+
 
 <!-- Section "Pourquoi Nous Choisir ?" -->
 <section class="why-choose-us">
@@ -113,56 +113,7 @@
 </section>
 
 
-<script>
-    const testimonialItems = document.querySelectorAll('.testimonial-item');
-    let currentIndex = 0;
-
-    // Fonction pour mettre à jour l'élément actif
-    function updateTestimonials() {
-        testimonialItems.forEach((item, index) => {
-            if (index === currentIndex) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
-        });
-    }
-
-    // Changer l'élément actif toutes les 3 secondes
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % testimonialItems.length; // Passer à l'index suivant
-        updateTestimonials();
-    }, 3000); // Durée de changement
-
-
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const carousel = document.querySelector('.carousel-slides');
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-
-        let currentIndex = 0;
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            carousel.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            showSlide(currentIndex);
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            showSlide(currentIndex);
-        });
-    });
-</script>
-
-
+<script src="{% static 'js/home.js' %}" defer></script>
 
 
 {% endblock %}
