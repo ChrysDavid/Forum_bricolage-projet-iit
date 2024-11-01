@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     {% block head %}{% endblock %}
     <title>{% block title %}Mon site{% endblock %}</title>
 </head>
+
 <body>
 
     <!-- Haut de page -->
@@ -25,10 +27,11 @@
     </header>
 
     <!-- Login -->
-    <div class="login-container">
+    <div class="login-container" style="display: none;"> <!-- On cache par défaut -->
         <div class="login-box">
-            <div class="login-button-close">
-                <a href="#"><i class="fa-sharp fa-solid fa-xmark"></i></a>
+            <!-- Pour le login -->
+            <div class="zone-login-info">
+                <a class="login-button-close" href="#"><i class="fa-sharp fa-solid fa-xmark"></i></a>
                 <h2 class="login-h2">Login</h2>
                 <form action="#">
                     <label>Nom d'utilisateur</label>
@@ -37,29 +40,43 @@
                     <input type="password" id="password" placeholder="Mot de passe" required>
                     <div class="options">
                         <label><input type="checkbox">Se rappeler</label>
-                        <a href="#">Mot de passe oublie</a>
+                        <a href="#">Mot de passe oublié</a>
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit">Connexion</button>
                 </form>
-                <p>Don't have an account? <a href="#">Register</a></p>
+                <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+            </div>
+            <!-- Pour le register -->
+            <div class="zone-register-info" style="display: none;"> <!-- On cache par défaut -->
+                <a class="register-button-close" href="#"><i class="fa-sharp fa-solid fa-xmark"></i></a>
+                <h2 class="register-h2">Inscription</h2>
+                <form action="#">
+                    <label>Nom d'utilisateur</label>
+                    <input type="text" id="username" placeholder="Nom d'utilisateur" required>
+                    <label>Adresse e-mail</label>
+                    <input type="email" id="email" placeholder="Votre email" required>
+                    <label>Mot de passe</label>
+                    <input type="password" id="password" placeholder="Mot de passe" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+                <p>Déjà inscrit ? <a href="#" id="show-login">Se connecter</a></p>
             </div>
         </div>
     </div>
 
     <!-- Milieur de page -->
-     <main>
+    <main>
         {% block content %}
-            <!-- COntenue en fonction des pages -->
+        <!-- COntenue en fonction des pages -->
         {% endblock %}
-     </main>
+    </main>
 
-     <!-- Pied de page -->
-      <footer>
+    <!-- Pied de page -->
+    <footer>
         <p>&copy; 2024 Vido forum bricolage</p>
-      </footer>
+    </footer>
 
-      <script src="{% static 'js/login.js' %}"></script>
-    
-
+    <script src="{% static 'js/login.js' %}"></script>
 </body>
+
 </html>
