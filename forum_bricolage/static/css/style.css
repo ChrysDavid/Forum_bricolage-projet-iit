@@ -1,4 +1,132 @@
-h1{
+/* Pour l'en tete */
+header{
+    background-color: red;
+    padding: 15px;
     text-align: center;
-    color: brown;
+}
+
+header nav{
+    display: flex; /* Afficher les éléments du menu en ligne */
+    justify-content: end;  /* Centrer le menu */
+    gap: 15px; /* Espacement entre les liens */
+}
+
+header nav a{
+    color: white;
+    text-decoration: none; /* Supprime le soulignement des liens */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 15px; /* Espacement autour des liens vertical et horizontal */
+    transition: color 0.3s, background-color 0.3s; /* Transition pour les effets de survol */
+}
+
+/* .login-button {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+.login-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+header nav a:hover{
+    background-color: #555;
+    color: #f0f0f0;
+    border-radius: 4px;
+}
+
+/* Style pour le login */
+.login-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); /* Pour rendre l'arriere plan flu */
+}
+
+.login-box{
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    position: relative;
+    text-align: center;
+}
+
+.login-button-close{
+    /* position: absolute; */
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.login-h2{
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+form label {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+
+/* Pour le bas de page */
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+footer p{
+    margin: 0;
 }
