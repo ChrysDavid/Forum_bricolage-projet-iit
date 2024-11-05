@@ -136,6 +136,93 @@
 .btn-carousel:hover {
     background-color: #F4511E;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.zone-text-blog{
+    padding-left: 16px;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.blog-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 400px;
+    text-align: start;
+}
+
+.blog-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.blog-title {
+    font-size: 1.5em;
+    color: #0044cc;
+    margin: 15px 0 5px;
+}
+
+.blog-date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.blog-description {
+    /* padding: 0 15px; */
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.blog-link {
+    display: inline-block;
+    color: #0044cc;
+    font-size: 1em;
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.blog-link:hover {
+    color: #0077ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Style pour la section Nos Services */
 .services {
     padding: 3rem 2rem;

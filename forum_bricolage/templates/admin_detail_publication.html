@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/admin_add_publication.css' %}">
+{% endblock %}
+
+{% block title %}{% if publication %}Modifier une Publication{% else %}Ajouter une Publication{% endif %}{% endblock %}
+
+{% block content %}
+<section>
+    <div class="form-container">
+        <div class="bar-option">
+            <a href="{% url 'admin_page' %}">[Retour]</a>
+        </div>
+        <h2>{% if publication %}Modifier une Publication{% else %}Ajouter une Publication{% endif %}</h2>
+        <form method="post" action="{% if publication %}{% url 'edit_publication' publication.id %}{% else %}{% url 'add_publication' %}{% endif %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">{% if publication %}Modifier{% else %}Ajouter{% endif %}</button>
+        </form>      
+    </div>
+    <div style="height: 160px;"></div>
+</section>
+{% endblock %}

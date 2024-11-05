@@ -8,3 +8,7 @@ def a_propos(request):
 
 def contact_view(request):
     return render(request, 'contact.html')
+
+
+def admin_page_view(request):
+    return render(request, 'admin.html')

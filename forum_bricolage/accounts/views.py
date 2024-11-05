@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 
 def login_view(request):
@@ -13,10 +14,12 @@ def login_view(request):
             login(request, user)
             return redirect('home')
         else:
-            # Add error message if needed
-            print("Authentication failed")
+            messages.error(request, "Nom d'utilisateur ou mot de passe incorrect.")
+            # Render the index.html template with the login-container displayed
+            return render(request, 'index.html', {'display_login_container': True})
     
-    return render(request, 'base.html')
+    # Render the index.html template with the login-container hidden
+    return render(request, 'index.html', {'display_login_container': False})
 
 
 def register_view(request):
