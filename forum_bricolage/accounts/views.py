@@ -36,7 +36,7 @@ def register_view(request):
         except Exception as e:
             print(f"Registration error: {e}")
     
-    return render(request, 'base.html')
+    return render(request, 'index.html')
 
 
 def logout_view(request):

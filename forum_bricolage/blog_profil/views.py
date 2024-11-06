@@ -4,6 +4,11 @@ from .forms import PublicationForm
 from .models import Publication
 
 # Create your views here.
+def admin_page(request):
+    # Filtrer les publications par auteur (l'utilisateur connecté)
+    publications = Publication.objects.filter(author=request.user)  # Affiche seulement les publications de l'utilisateur connecté
+    return render(request, 'admin.html', {'publications': publications})
+
 
 def add_publication(request):
     if request.method == 'POST':
@@ -17,12 +22,6 @@ def add_publication(request):
     else:
         form = PublicationForm()
     return render(request, 'admin_detail_publication.html', {'form': form})
-
-
-def admin_page(request):
-    # Filtrer les publications par auteur (l'utilisateur connecté)
-    publications = Publication.objects.filter(author=request.user)  # Affiche seulement les publications de l'utilisateur connecté
-    return render(request, 'admin.html', {'publications': publications})
 
 
 def edit_publication(request, id):

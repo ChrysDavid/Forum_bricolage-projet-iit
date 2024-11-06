@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/chat_page.css' %}">
+{% endblock %}
+
+{% block title %}Chat App{% endblock %}
+
+{% block content %}
+
+<div class="chat-container">
+    <!-- Sidebar with user profiles -->
+    <div class="sidebar">
+        <h2>Profiles</h2>
+        <ul id="user-list">
+            <!-- Dynamically generated user profiles -->
+        </ul>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area">
+        <div class="chat-header" id="chat-header">
+            <h3>Select a user to start chatting</h3>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <p>Select a profile on the left to see the conversation.</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type a message..." disabled />
+            <button id="send-btn" disabled>Send</button>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/chat_page.js' %}"></script>
+
+
+{% endblock %}
